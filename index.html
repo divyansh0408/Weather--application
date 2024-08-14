@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter city name " spellcheck="false" id="cityInput">
+            <button id="searchButton"><img src="images/search.png" alt=""></button>
+            <button id="exlocation"><img src="images/location.png" alt=""></button>
+        </div>
+        <div id="output"></div>
+
+        <div class="weather">
+            <img src="images/rain.png" alt="" class="weather-icon">
+            <h1 class="temp">0°c</h1>
+            <h2 class="city">Search your city</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="">
+                    <div>
+                        <p class="humidity">0%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="">
+                    <div>
+                        <p class="wind">00km/hr</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <!-- <script>
+
+
+
+
+// Function to get latitude and longitude from city name
+async function getCoordinates(cityName) {
+    const apiKey = 'ecb6faeb277b711fca249d3bdfd93d49'; // Replace with your OpenCage API key
+    const url = ` http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(cityName)}&key=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data.results.length > 0) {
+            const { lat, lng } = data.results[0].geometry;
+            return { latitude: lat, longitude: lng };
+        } else {
+            throw new Error('Location not found');
+        }
+    } catch (error) {
+        console.error('Error fetching coordinates:', error);
+        return null;
+    }
+}
+
+
+// Function to get weather data using latitude and longitude
+async function getWeather(latitude, longitude) {
+    const apiKey = 'ecb6faeb277b711fca249d3bdfd93d49'; // Replace with your OpenWeatherMap API key
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        return null;
+    }
+}
+
+
+
+
+
+
+async function getWeatherForCity(cityName) {
+    const coordinates = await getCoordinates(cityName);
+    if (coordinates) {
+        const weatherData = await getWeather(coordinates.latitude, coordinates.longitude);
+        if (weatherData) {
+            console.log(`Weather in ${cityName}:`);
+            console.log(`Temperature: ${weatherData.main.temp}°C`);
+            console.log(`Description: ${weatherData.weather[0].description}`);
+            console.log(`Humidity: ${weatherData.main.humidity}%`);
+            console.log(`Wind Speed: ${weatherData.wind.speed} m/s`);
+        } else {
+            console.log('Could not fetch weather data');
+        }
+    } else {
+        console.log('Could not fetch coordinates');
+    }
+}
+
+// Example usage
+getWeatherForCity('New York');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // const apikey = "ecb6faeb277b711fca249d3bdfd93d49";
+        // const apiurl = "https://api.openweathermap.org/data/2.5/weather?lat=100&lon=75";
+        // const latapi=" http://api.openweathermap.org/geo/1.0/direct?q=mumbai&limit=5";
+        // const searchBox = document.querySelector('.search input');//yha city dalenge
+        // const searchBtn = document.querySelector('.search button');
+
+        // async function checkWeather(city) {
+        //     // const response=await fetch( +`&appid=${apikey}`);
+        //     const response = await fetch(latapi+apiurl + city + `&appid=${apikey}`);
+        //     var data = await response.json();
+        //     console.log(data);
+        //     document.querySelector('.city').innerHTML = data.name;
+        //     document.querySelector('.temp').innerHTML = (data.main.temp) + "°c";
+        //     document.querySelector('.humidity').innerHTML = data.main.humidity + "%";
+        //     document.querySelector('.wind').innerHTML = data.wind.speed + "km/hr";
+
+
+
+
+        // }
+
+        // searchBtn.addEventListener("click",()=>{
+            
+        //     checkWeather(searchBox.value);
+        // })
+    </script> -->
+</body>
+
+</html>
