@@ -96,3 +96,31 @@ body {
     font-size: 28px;
     margin-top: -6px;
 }
+
+@media screen and (max-width:600px)
+{
+    .card{
+        padding: 20px 20px;
+
+    }
+   
+        .search {
+            flex-direction: column; /* Stack the elements vertically */
+            align-items: stretch;
+        }
+    
+        .searchButton.exlocation {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px; /* Add space between search box and buttons */
+          
+            gap: 10px; /* Adjust spacing between the buttons */
+            margin-top: 10px; /* Space between search box and buttons */
+            width: 100%; /* Make sure the container is 100% width */
+    
+        }
+    
+        .search {
+            width: 100%; /* Ensure the search box takes full width */
+        }
+    }
