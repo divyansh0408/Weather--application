@@ -23,8 +23,8 @@ document.getElementById('searchButton').addEventListener('click', async () => {
             console.log(weatherData);
             document.querySelector(".temp").innerHTML = Math.round(weatherData.main.temp) + "°c";
             document.querySelector(".city").innerHTML = weatherData.name;
-            document.querySelector(".wind").innerHTML = weatherData.wind.speed;
-            document.querySelector(".humidity").innerHTML = weatherData.main.humidity
+            document.querySelector(".wind").innerHTML = weatherData.wind.speed+" m/s";
+            document.querySelector(".humidity").innerHTML = weatherData.main.humidity+" %";
 
             if (weatherData.weather[0].main == "Clear") {
                 weatherIcon.src = "images/clear.png";

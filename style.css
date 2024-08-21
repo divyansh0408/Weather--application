@@ -6,15 +6,23 @@
 }
 
 body {
-    background: linear-gradient(95deg, rgb(198, 198, 96), rgb(148, 78, 78))
+    min-height: 100vh;
+    background: linear-gradient(95deg, rgb(198, 198, 96), rgb(148, 78, 78));
+    background: url("images/Background4.jpeg");
+    background-size: cover; 
+    background-position: center;
+    user-select: none;
 }
 
 .card {
+    
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(135deg, #86c7e0, #2fff);
+    background:rgb(255, 255, 255,.022);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgb(255, 255, 255,.1) ;
     color: #fff;
-    margin: 100px auto 0;
+    margin: 25px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -40,7 +48,10 @@ body {
     font-size: 18px;
 
 }
-
+.srchbtn{
+    margin-right: 10px;
+    margin-left: -10px;
+}
 .search button {
     border: 0;
     outline: 0;
